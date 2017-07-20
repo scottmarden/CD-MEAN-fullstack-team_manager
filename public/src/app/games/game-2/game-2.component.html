@@ -1,0 +1,9 @@
+<h3>Player Status - Game 2</h3>
+
+<div *ngFor="let player of playerList">
+	<p>{{ player.player_name }}</p>
+	<p>{{ player.game2 }}</p>
+	<button [ngClass]="{green: player.game2 === 'Playing'}" (click)="playing(player)">Playing</button>
+	<button [ngClass]="{red: player.game2 === 'Not Playing'}" (click)="notPlaying(player)">Not Playing</button>
+	<button [ngClass]="{yellow: player.game2 === 'Undecided'}" (click)="undecided(player)">Undecided</button>
+</div>

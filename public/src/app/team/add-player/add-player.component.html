@@ -1,0 +1,7 @@
+<h3>Add Player</h3>
+
+<form (submit)="createPlayer(newPlayer); playerForm.reset()" #playerForm="ngForm" >
+	Player Name: <input type="text" name="player_name" [(ngModel)]="newPlayer.player_name" #playerName="ngModel" minlength="2" required/><span *ngIf="playerName.errors && playerForm.touched"><p>Player name must be 2 characters long.</p></span>
+	Preferred Position: <input type="text" name="preferred_position" [(ngModel)]="newPlayer.preferred_position"/>
+	<button [disabled]="!playerForm.valid" type="submit">Add Player</button>
+</form>
